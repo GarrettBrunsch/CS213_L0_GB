@@ -5,30 +5,24 @@ import java.util.Scanner;
 import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 
-
-public class Main 
+public class Main
 {
+    public static void main(String[] args)
+    {
+        String name, strOutput, msgTitle;
+        int num1, num2, sum;
 
-
-    public static void main(String[] args) 
-  {
-           String name, strOutput, msgTitle;
-           int num1, num2, sum;
-
-            Scanner scanner = new Scanner(System.in);
-
-            name = JOptionPane.showInputDialog("What is your  full name?");
-
+        Scanner scanner = new Scanner(System.in);
+        name = JOptionPane.showInputDialog("What is your full name?");
 
         //JOptionPane.showInputDialog returns a string; we need to convert it to a number before storing in int
-        num1= Integer.parseInt(JOptionPane.showInputDialog("Enter second number"));
-        num2 = Integer.parseInt(JOptionPane.showInputDialog("Enter first number"));
+        num1= Integer.parseInt(JOptionPane.showInputDialog("Enter first number"));
+        num2 = Integer.parseInt(JOptionPane.showInputDialog("Enter second number"));
 
-
-            sum = num1 + num2;
-            msgTitle ="Java program by " + name + "!";
-            strOutput="The product of " + num2+
-                     "and " + num2 + " is " + sum;
+        sum = num1 + num2;
+        msgTitle ="Java program by " + name + "!";
+        strOutput="The sum of " + num1 +
+                " and " + num2 + " is " + sum;
 
         //outputs to a console
         System.out.println(msgTitle +"\n" + strOutput);
@@ -43,20 +37,31 @@ public class Main
                 JOptionPane.QUESTION_MESSAGE);
 
         strOutput="You selected: ";
-
         //switch statement -fall through  demo
         switch (result)
         {
-            case JOptionPane.YES_OPTION: strOutput += "YES";
-            case JOptionPane.NO_OPTION: strOutput += "NO";
-            default: strOutput += "\nI am going to exit anyway :) ";
+            case JOptionPane.YES_OPTION: strOutput += "YES\n";
+            case JOptionPane.NO_OPTION: strOutput += "NO\n";
+            default: strOutput += "I am going to exit anyway :) \n";
         }
 
- System.out.println(strOutput);
-            scanner.close();
-        }
+        System.out.println(strOutput);
+        scanner.close();
     }
+}
 
 /*
-Copy and paster your test runs/output here
+Java program by Garrett Brunsch!
+The sum of 1 and 2 is 3
+You selected: YESNO
+I am going to exit anyway :)
+
+Process finished with exit code 0
+
+Java program by Garrett!
+The sum of 5 and 3 is 8
+You selected: NO
+I am going to exit anyway :)
+
+Process finished with exit code 0
  */
