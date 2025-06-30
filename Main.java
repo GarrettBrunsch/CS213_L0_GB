@@ -10,7 +10,7 @@ public class Main
     public static void main(String[] args)
     {
         String name, strOutput, msgTitle;
-        int num1, num2, sum;
+        int num1, num2, product;
 
         Scanner scanner = new Scanner(System.in);
         name = JOptionPane.showInputDialog("What is your full name?");
@@ -19,15 +19,15 @@ public class Main
         num1= Integer.parseInt(JOptionPane.showInputDialog("Enter first number"));
         num2 = Integer.parseInt(JOptionPane.showInputDialog("Enter second number"));
 
-        sum = num1 + num2;
+        product = num1 * num2;
         msgTitle ="Java program by " + name + "!";
-        strOutput="The sum of " + num1 +
-                " and " + num2 + " is " + sum;
+        strOutput="The product of " + num1 +
+                " and " + num2 + " is " + product;
 
         //outputs to a console
         System.out.println(msgTitle +"\n" + strOutput);
 
-        ImageIcon icon = new ImageIcon("src/JavaLogo.jpg");
+        ImageIcon icon = new ImageIcon("src/JavaLogo.png");
         JOptionPane.showMessageDialog(null, strOutput, msgTitle,
                 JOptionPane.INFORMATION_MESSAGE, icon);
 
@@ -41,8 +41,10 @@ public class Main
         switch (result)
         {
             case JOptionPane.YES_OPTION: strOutput += "YES\n";
+            break;
             case JOptionPane.NO_OPTION: strOutput += "NO\n";
             default: strOutput += "I am going to exit anyway :) \n";
+            break;
         }
 
         System.out.println(strOutput);
@@ -51,17 +53,19 @@ public class Main
 }
 
 /*
-Java program by Garrett Brunsch!
-The sum of 1 and 2 is 3
-You selected: YESNO
+Java program by Garrett BRUNSCH!
+The product of 15 and 3 is 45
+You selected: NO
 I am going to exit anyway :)
+
 
 Process finished with exit code 0
 
-Java program by Garrett!
-The sum of 5 and 3 is 8
-You selected: NO
-I am going to exit anyway :)
+
+Java program by Garrett Brunsch!
+The product of 2 and 25 is 50
+You selected: YES
+
 
 Process finished with exit code 0
  */
